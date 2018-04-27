@@ -1,0 +1,99 @@
+<html>
+    <style>
+        #calc {
+            width:414px;height:314px;background-color:#672491;border-style:solid;border-radius:7px;
+        }
+        #result {
+            width:400px;height:95px;margin-top:7px;margin-left:7px;background-color:#777777;font:43px Arial, sans-serif;color:#E7E7E7;border-style:solid;border-radius:7px;
+        }
+        #sign {
+            float:left;width:52px;height:52px;margin-top:49px;margin-left:7px;margin-right:0px; background-color:#140014;font:43px Arial, sans-serif;text-align:center;color:#FFD77D;border-style:solid;border-radius:7px;
+        }
+        #num1 {
+            float:left;width:334px;height:52px;margin-top:19px;margin-left:7px;background-color:#777777;font:25px Arial, sans-serif;color:#E7E7E7;border-style:solid;border-radius:7px;
+        }
+        #num2 {
+            float:left;width:334px;height:52px;margin-top:7px;margin-left:7px;background-color:#777777;font:25px Arial, sans-serif;color:#E7E7E7;border-style:solid;border-radius:7px;
+        }
+        #plus {
+            float:left;width:59px;height:59px;margin-top:14px;margin-left:7px;background-color:#777777;font:34px Arial, sans-serif;color:#FFD77D;border-style:solid;border-radius:7px;
+        }
+        #min {
+            float:left;width:59px;height:59px;margin-top:14px;margin-left:7px;background-color:#777777;font:34px Arial, sans-serif;color:#FFD77D;border-style:solid;border-radius:7px;
+        }
+        #mul {
+            float:left;width:59px;height:59px;margin-top:14px;margin-left:7px;background-color:#777777;font:34px Arial, sans-serif;color:#FFD77D;border-style:solid;border-radius:7px;
+        }
+        #divis {
+            float:left;width:59px;height:59px;margin-top:14px;margin-left:7px;background-color:#777777;font:34px Arial, sans-serif;color:#FFD77D;border-style:solid;border-radius:7px;
+        }
+        #exp {
+            float:left;width:59px;height:59px;margin-top:14px;margin-left:7px;background-color:#777777;font:19px Arial, sans-serif;color:#FFD77D;border-style:solid;border-radius:7px;
+        }
+        #res {
+            float:left;width:69px;height:59px;margin-top:14px;margin-left:7px;background-color:#005200;font:34px Arial, sans-serif;color:#FFD77D;border-style:solid;border-radius:7px;
+        }
+    </style>
+    <script>
+	function PlusFunc() {
+	    document.getElementById('sign').innerHTML='+';
+	    document.getElementById('num1').placeholder  = 'basis...';
+	    document.getElementById('num2').placeholder = 'addendum...';
+	};
+	function MinFunc() {
+	    document.getElementById('sign').innerHTML='-';
+	    document.getElementById('num1').placeholder  = 'basis...';
+	    document.getElementById('num2').placeholder = 'substractor...';
+	};
+	function MulFunc() {
+	    document.getElementById('sign').innerHTML='x';
+	    document.getElementById('num1').placeholder  = 'basis...';
+	    document.getElementById('num2').placeholder = 'multiplicator...';
+	};
+	function DivFunc() {
+	    document.getElementById('sign').innerHTML='/';
+	    document.getElementById('num1').placeholder  = 'basis...';
+	    document.getElementById('num2').placeholder = 'denominator...';
+	};
+	function ExpFunc() {
+	    document.getElementById('sign').innerHTML = 'e';
+	    document.getElementById('num1').value = 2.71828;
+	    document.getElementById('num2').placeholder = 'Your x number where exp(x)';
+	};
+	function CountFunc() {
+	    x1 = document.getElementById("num1").value;
+	    x2 = document.getElementById("num2").value;
+	    x3 = document.getElementById("sign").textContent;
+	    n1 = Number(x1)
+	    n2 = Number(x2)
+	    if (x3 == '+') {
+		result = n1 + n2;
+		}
+	    if (x3 == '-') {
+		result = n1 - n2;
+		}
+	    if (x3 == 'x') {
+		result = n1 * n2;
+		}
+	    if (x3 == '/') {
+		result = n1 / n2;
+		}
+	    if (x3 == 'e') {
+		result = Math.pow(n1, n2);
+	    }
+	    document.getElementById("result").value = result;
+	};
+    </script>
+    <div id="calc">
+        <input type="text" id="result" placeholder="result..." />
+        <div id="sign"></div>
+        <input type="text" id="num1" placeholder="Your number a ..." />
+        <input type="text" id="num2" placeholder="Your number b ..." />
+        <input type="button" id="plus" value="+" onclick="PlusFunc();" />
+        <input type="button" id="min" value="-" onclick="MinFunc();" />
+        <input type="button" id="mul" value="✖" onclick="MulFunc();" />
+        <input type="button" id="divis" value="/" onclick="DivFunc();" />
+        <input type="button" id="exp" value="exp()" onclick="ExpFunc();" />
+        <input type="button" id="res" value="=" onclick="CountFunc();" />
+    </div>
+</html>
