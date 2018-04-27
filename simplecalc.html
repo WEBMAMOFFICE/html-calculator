@@ -22,7 +22,7 @@
             float:left;width:59px;height:59px;margin-top:14px;margin-left:7px;background-color:#777777;font:34px Arial, sans-serif;color:#FFD77D;border-style:solid;border-radius:7px;
         }
         #mul {
-            float:left;width:59px;height:59px;margin-top:14px;margin-left:7px;background-color:#777777;font:34px Symbol, sans-serif;color:#FFD77D;border-style:solid;border-radius:7px;
+            float:left;width:59px;height:59px;margin-top:14px;margin-left:7px;background-color:#777777;font:34px Courier, sans-serif;color:#FFD77D;border-style:solid;border-radius:7px;
         }
         #divis {
             float:left;width:59px;height:59px;margin-top:14px;margin-left:7px;background-color:#777777;font:34px Arial, sans-serif;color:#FFD77D;border-style:solid;border-radius:7px;
@@ -46,7 +46,7 @@
 	    document.getElementById('num2').placeholder = 'substractor...';
 	};
 	function MulFunc() {
-	    document.getElementById('sign').innerHTML='#0xB4';
+	    document.getElementById('sign').innerHTML='*';
 	    document.getElementById('num1').placeholder  = 'basis...';
 	    document.getElementById('num2').placeholder = 'multiplicator...';
 	};
@@ -91,7 +91,7 @@
         <input type="text" id="num2" placeholder="Your number b ..." />
         <input type="button" id="plus" value="+" onclick="PlusFunc();" />
         <input type="button" id="min" value="-" onclick="MinFunc();" />
-        <input type="button" id="mul" value="#0xB4" onclick="MulFunc();" />
+        <input type="button" id="mul" value="*" onclick="MulFunc();" />
         <input type="button" id="divis" value="/" onclick="DivFunc();" />
         <input type="button" id="exp" value="exp()" onclick="ExpFunc();" />
         <input type="button" id="res" value="=" onclick="CountFunc();" />
